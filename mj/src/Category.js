@@ -54,7 +54,7 @@ export default function CategoryManagement() {
     createdAt: new Date(),
     description: '',
     amount: 0,
-    category: "Uncategorised",
+    category: categories[0],
     defaultCategory: "Uncategoriesd"
   })
 
@@ -119,7 +119,7 @@ export default function CategoryManagement() {
       createdAt: new Date(),
       description: '',
       amount: 0,
-      category: "Uncategorised",
+      category: categories[0],
       defaultCategory: "Uncategoriesd"
     })
     setCategory({})
@@ -134,7 +134,7 @@ export default function CategoryManagement() {
       description: data.description,
       amount: parseFloat(data.amount),
       createdAt: new Date(data.createdAt),
-      category: "Uncategorised",
+      category: category,
       defaultCategory: "Uncategoriesd"
     }
     console.log('onSubmit', preparedData)
