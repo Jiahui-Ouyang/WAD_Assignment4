@@ -97,7 +97,7 @@ export default function Journal() {
         t += d.amount
         return (
           <JournalRow data={d} i={i} />
-          
+
         )
 
       })
@@ -171,10 +171,9 @@ export default function Journal() {
 
   // Delete only the kind of data which belongs to Uncategorised
   const handleDeleteClick = (id) => {
-    while (category = "Uncategorised")
-      console.log('handleDeleteClick in Journal', id)
-    if (window.confirm("Are you sure to delete this record?"))
-      moneyRef.doc(id).delete()
+    console.log('handleDeleteClick in Journal id:', id)
+    if ((window.confirm("Are you sure to delete this record?")))
+        moneyRef.doc(id).delete()
   }
 
   const handleEditClick = (data) => {
@@ -203,9 +202,6 @@ export default function Journal() {
       <Row>
         <Col>
           <h1>Journal</h1>
-          <Button variant="outline-dark" onClick={handleshowForm}>
-            <BsPlus /> Add
-      </Button>
         </Col>
         <Col>
           Category:
@@ -222,7 +218,6 @@ export default function Journal() {
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>
-            <th>#</th>
             <th>Date</th>
             <th>Description</th>
             <th>Category</th>
@@ -349,10 +344,6 @@ function JournalRow(props) {
   // console.log("JournalRow", d)
   return (
     <tr>
-      <td>
-        <BsTrash onClick={() => props.onDeleteClick(d.id)} />
-        <BsPencil onClick={() => props.onEditClick(d)} />
-      </td>
       <td>{format(d.createdAt.toDate(), "yyyy-MM-dd")}</td>
       <td>{d.description}</td>
       <td>{d.category.name}</td>
